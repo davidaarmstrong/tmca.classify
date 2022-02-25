@@ -844,10 +844,10 @@ tmca_classify <- setRefClass(
       with LDA features, if both are present."
       if (!validation) {
         dfm <- dfm_ngram
-        if (nrow(dfm_lda) > 1) dfm <- cBind(dfm, dfm_lda)
+        if (nrow(dfm_lda) > 1) dfm <- cbind(dfm, dfm_lda)
       } else {
         dfm <- validation_dfm_ngram
-        if (nrow(validation_dfm_lda) > 1) dfm <- cBind(dfm, validation_dfm_lda)
+        if (nrow(validation_dfm_lda) > 1) dfm <- cbind(dfm, validation_dfm_lda)
       }
       return(dfm)
     },
